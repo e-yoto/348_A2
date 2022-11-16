@@ -6,7 +6,4 @@ class User:
         self.phone = phone
     
     def display(self):
-        print("this is "+ self.name)
-        print(self.age)
-        print(self.address)
-        print(self.phone)
+        print("{0}|{1}|{2}|{3}".format(self.name,self.age,self.address,self.phone))
