@@ -1,5 +1,5 @@
 John|43|123	Apple	street|514	428-3452
-www|www|www|www
+www |www|www|www
 |23|321 the street|1231
 Katya|		 26|49	Queen	Mary	Road|514	234-7654
 Ahmad|91|1888	Pepper	Lane|

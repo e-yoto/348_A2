@@ -31,9 +31,11 @@ while True:
         info = info + "," + name
     elif selection == 2:
         name = input("New customer's name: ")
+        name = name.strip()
         while not name:
             print("Name cannot be empty, please try again")
             name = input("New customer's name: ")
+            name = name.strip()
         info = info + "," + name
         age = input("New customer's age: ")
         info = info + "," + str(age)

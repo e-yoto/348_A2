@@ -35,8 +35,6 @@ class MyTCPHandler(socketserver.BaseRequestHandler):
             response = update_phone(data[1],data[2])
         elif(data[0] == "7"):
             response = generate_report()
-        elif(data[0] == "9"):
-            printall()
             
         response_as_bytes = str.encode(response)
         self.request.sendall(response_as_bytes)
@@ -49,10 +47,10 @@ def load():
             split = line.split("|")
             if not split[0]:
                 continue
-            newUser = User(split[0],split[1],split[2],split[3])
+            newUser = User(split[0].strip(),split[1],split[2],split[3])
             users_list.append(newUser)
 
-# Option 1            
+#Option 1            
 def find(name):
     for user in users_list:
         if (user.name == name):
@@ -109,11 +107,7 @@ def generate_report():
     for user in sorted_list:
         report += User.get_user(user) + "\n"
     sorted_list = []
-    return report
-
-def printall():
-    print(len(users_list))
-        
+    return report  
 
 if __name__ == "__main__":
     HOST, PORT = "localhost", 9999
